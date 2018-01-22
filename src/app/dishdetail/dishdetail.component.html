@@ -24,12 +24,14 @@
 	</md-card>
   </div>
   <div fxFlex="40">
-  	<h2>Comments</h2>
 	<md-list *ngIf="dish">
+	  	<h3>Comments</h3>
 		<md-list-item *ngFor="let feedback of dish.comments">
-			<p md-line>{{feedback.comment}}</p>
+			<h4 md-line>{{feedback.comment}}</h4>
 			<p md-line>{{feedback.rating}} Stars</p>
-			<p md-line>-- {{feedback.author}} {{feedback.date | date}}</p>
+			<p md-line>
+				<span>-- {{feedback.author}} {{feedback.date | date}}</span>
+			</p>
 		</md-list-item>
   	</md-list>
   </div>
