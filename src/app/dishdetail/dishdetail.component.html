@@ -31,11 +31,6 @@
 		</md-card-actions>
 	</md-card>
   </div>
-  <div [hidden]="dish">
-    <md-spinner></md-spinner>
-    <h4>Loading . . . Please Wait</h4>
-  </div>
-
   <div fxFlex="40" *ngIf="dish">
 	<md-list>
 	  	<h3>Comments</h3>
@@ -47,10 +42,6 @@
 			</p>
 		</md-list-item>
   	</md-list>
-  </div>
-  <div [hidden]="dish">
-    <md-spinner></md-spinner>
-    <h4>Loading . . . Please Wait</h4>
   </div>
   <div class="form-size">
   	<div>
@@ -86,5 +77,13 @@
       </p>
       <button type="submit" md-button class="background-primary text-floral-white" [disabled]="commentForm.invalid">Submit</button>
     </form>
+  </div>
+  <div [hidden]="dish || errMsg">
+    <md-spinner></md-spinner>
+    <h4>Loading . . . Please Wait</h4>
+  </div>
+  <div *ngIf="errMsg">
+	<h2>Error</h2>
+	<h4>{{errMsg}}</h4>
   </div>
 </div>
