@@ -6,7 +6,7 @@
     fxLayoutGap="10px" 
     fxLayoutGap.xs="0">
 
-  <div fxFlex="40" *ngIf="dish" [@visibility]="visibility">
+  <div fxFlex="40" *ngIf="dish" [@visibility]="visibility" [@expand]>
   	<md-card>
 		<md-card-header>
 			<md-card-title>
@@ -31,7 +31,7 @@
 		</md-card-actions>
 	</md-card>
   </div>
-  <div fxFlex="40" *ngIf="dish" [@visibility]="visibility">
+  <div fxFlex="40" *ngIf="dish" [@visibility]="visibility" [@expand]>
 	<md-list>
 	  	<h3>Comments</h3>
 		<md-list-item *ngFor="let feedback of dish.comments">
@@ -42,9 +42,8 @@
 			</p>
 		</md-list-item>
   	</md-list>
-  </div>
-  <div class="form-size">
-  	<div>
+   <div class="form-size">
+   <div>
 	  	<md-list>
 		  	<h3>Preview Comments</h3>
 			<md-list-item *ngIf="commentForm.status == 'VALID'">
@@ -77,6 +76,7 @@
       </p>
       <button type="submit" md-button class="background-primary text-floral-white" [disabled]="commentForm.invalid">Submit</button>
     </form>
+  </div>
   </div>
   <div [hidden]="dish || errMsg">
     <md-spinner></md-spinner>
