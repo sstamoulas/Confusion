@@ -54,8 +54,20 @@ import { HighlightDirective } from './directives/highlight.directive';
     ReactiveFormsModule,
     RestangularModule.forRoot(RestangularConfigFactory)
   ],
-  providers: [DishService, PromotionService, LeaderService, { provide: 'BaseURL', useValue: baseURL }, ProcessHTTPMsgService],
-  entryComponents: [LoginComponent], 
-  bootstrap: [AppComponent]
+  providers: [
+    DishService, 
+    PromotionService, 
+    LeaderService, 
+    { provide: 'BaseURL', 
+      useValue: baseURL 
+    }, 
+    ProcessHTTPMsgService
+  ],
+  entryComponents: [
+    LoginComponent
+  ], 
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }
