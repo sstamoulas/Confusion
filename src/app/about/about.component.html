@@ -60,7 +60,7 @@
         <md-list *ngIf="leaders" [@expand]>
           <md-list-item *ngFor="let leader of leaders" class="content">
         		<div fxFlex="column" fxLayoutGap="20px">
-        			<img class="mat-list-icon-update" src={{leader.image}} alt={{leader.name}}>
+        			<img class="mat-list-icon-update" src="{{BaseURL + leader.image}}" alt={{leader.name}}>
         			<div fxFlex="row">
         				<div style="font-size: 12px">{{leader.name | uppercase}}</div>
   							<div style="font-size: 12px">{{leader.designation}}</div>
